@@ -1,0 +1,9 @@
+# Arquivos do sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Editores de código
+.vscode/
+.idea/
+

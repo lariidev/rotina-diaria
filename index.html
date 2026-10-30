@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Lista de Tarefas</title>
+  <!-- Link para a folha de estilos CSS externa -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonte moderna do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Container principal centralizado na tela -->
+  <main class="app-container">
+    
+    <!-- Cabeçalho com título e subtítulo -->
+    <header class="app-header">
+      <h1>Lista de Tarefas</h1>
+      <p class="subtitle">Organize seu dia a dia de forma simples</p>
+    </header>
+
+    <!-- Formulário para adicionar nova tarefa -->
+    <form id="task-form" class="task-form">
+      <div class="input-main-row">
+        <input 
+          type="text" 
+          id="task-input" 
+          placeholder="O que você precisa fazer hoje?" 
+          autocomplete="off"
+          required
+        >
+        <button type="submit" id="add-btn">
+          <span>Adicionar</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Configuração de repetições diárias da tarefa -->
+      <div class="repeat-selector-row">
+        <label for="task-repeat" class="repeat-label">
+          <span>🔁 Repetir no dia:</span>
+          <select id="task-repeat" class="repeat-select">
+            <option value="1">1 vez (Tarefa comum)</option>
+            <option value="2">2 vezes ao dia</option>
+            <option value="3">3 vezes ao dia</option>
+            <option value="4">4 vezes ao dia</option>
+            <option value="5">5 vezes ao dia</option>
+            <option value="8">8 vezes (Ex: Copos de água)</option>
+          </select>
+        </label>
+      </div>
+    </form>
+
+    <!-- Barra de status com contador de tarefas e ações de rotina -->
+    <section class="task-status">
+      <span id="task-counter">0 tarefas pendentes</span>
+      <div class="status-actions">
+        <button id="reset-day-btn" class="btn-text" type="button" title="Zera as repetições de hoje para recomeçar o dia">
+          ☀️ Reiniciar rotina do dia
+        </button>
+        <button id="clear-completed-btn" class="btn-text" type="button" style="display: none;">
+          Limpar concluídas
+        </button>
+      </div>
+    </section>
+
+    <!-- Lista onde os itens de tarefas serão inseridos pelo JavaScript -->
+    <ul id="task-list" class="task-list">
+      <!-- Os itens <li> serão criados dinamicamente via script.js -->
+    </ul>
+
+    <!-- Mensagem exibida quando não houver tarefas cadastradas -->
+    <div id="empty-state" class="empty-state">
+      <div class="empty-icon">📝</div>
+      <p>Nenhuma tarefa no momento.</p>
+      <span>Adicione uma atividade acima para começar!</span>
+    </div>
+
+  </main>
+
+  <!-- Script com a lógica da aplicação -->
+  <script src="script.js"></script>
+</body>
+</html>
+
